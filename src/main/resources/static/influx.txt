@@ -1,0 +1,38 @@
+docker run -d -p 8086:8086 -v influxdb:/var/lib/influxdb influxdb
+
+docker run -d -p 8086:8086 -v $PWD/influxdb:/var/lib/influxdb influxdb
+
+docker exec -it influxdb
+
+
+
+InfluxDB Cli中，time默认显示为19位时间戳格式，平时查询起来特不方便，那么，如何设置成为我们人类能看懂的时间格式呢？
+
+方法有二：
+
+1、$?influx -precision rfc3339
+
+2、$ influx
+
+? Connected to http://localhost:8086 version 0.xx.x
+
+? InfluxDB shell 0.xx.x
+
+>?precision rfc3339
+
+================================
+chronograf
+InfluxDBStudio
+https://blog.csdn.net/u010278923/article/details/81364392
+
+=========================
+
+influx -precision rfc3339
+
+influx -import -path=NOAA_data.txt -precision=s -database=NOAA_water_database
+
+
+CREATE DATABASE NOAA_water_database
+
+use NOAA_water_database
+
